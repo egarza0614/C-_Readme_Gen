@@ -60,7 +60,7 @@ function generateMarkdown(data) {
 
   markdown += `## Usage\n${data.usage}\n`;
   // Add the link to the demo video
-  markdown += `Here's a quick demo of the application in action: [ReadMe Generator Demo](https://github.com/egarza0614/C9_Readme_Gen/assets/ReadMeGen_Demo.webm)\n`;
+  markdown += `Here's a quick demo of the application in action: [ReadMe Generator Demo](https://egarza0614.github.io/C9_Readme_Gen/assets/ReadMeGen_Demo.webm)\n`;
 
   markdown += `## Contribution\n${data.contributing}\n`;
 
