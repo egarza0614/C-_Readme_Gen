@@ -4,17 +4,15 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 const questions = [
   { name: "title", message: "What is the title of your project?" },
-  { name: "description", message: "Enter a short description of your project." },
+  { name: "description", message: "Enter a short description of your project:" },
   { name: "installation", message: "How do users install your application?" },
   { name: "usage", message: "How do users use your application?" },
-  { name: "contributing", message: "Who contributed to your application?" },
+  { name: "contribution", message: "Who contributed to your application?" },
   { name: "tests", message: "Was this application tested?" },
-
   { name: "license", message: "Choose a license for your application: (MIT, Apache-2.0, GPLv3)" },
   { name: "github", message: "Enter your GitHub username (optional):" },
   { name: "email", message: "Enter your email address (optional):" }
 ];
-
 
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {

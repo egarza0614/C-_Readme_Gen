@@ -34,13 +34,11 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 const generateTableOfContents = (data) => {
-  const sections = ["Description", "Installation", "Usage", "Contributing", "Tests", "Questions"];
+  const sections = ["Description", "Installation", "Usage", "Contribution", "Tests", "Questions"];
   let tableOfContents = "## Table of Contents\n";
 
   sections.forEach((section) => {
-    if (data[section.toLowerCase()]) { // Check if section has content
-      tableOfContents += `* [${section}](#${section.toLowerCase()})\n`;
-    }
+    tableOfContents += `* [${section}](#${section.toLowerCase()})\n`;
   });
 
   return tableOfContents;
@@ -58,13 +56,13 @@ function generateMarkdown(data) {
 
   markdown += `## Description\n${data.description}\n`;
 
-  markdown += `## Installation Instructions\n${data.installation}\n`;
+  markdown += `## Installation\n${data.installation}\n`;
 
-  markdown += `## Usage Information\n${data.usage}\n`;
+  markdown += `## Usage\n${data.usage}\n`;
   // Add the link to the demo video
-  markdown += `Here's a quick demo of the application in action: [ReadMe Generator Demo](https://github.com/egarza0614/assets/ReadMeGen_Demo.webm)\n`;
+  markdown += `Here's a quick demo of the application in action: [ReadMe Generator Demo](https://github.com/egarza0614/C9_Readme_Gen/assets/ReadMeGen_Demo.webm)\n`;
 
-  markdown += `## Contributing\n${data.contributing}\n`;
+  markdown += `## Contribution\n${data.contributing}\n`;
 
   markdown += `## Tests\n${data.tests}\n`;
 
