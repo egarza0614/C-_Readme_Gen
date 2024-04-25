@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   const licenses = {
@@ -9,7 +9,7 @@ function renderLicenseBadge(license) {
   return licenses[license] || ''; // Return empty string if license not found
 }
 
-// TODO: Create a function that returns the license link
+// function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   const links = {
@@ -20,7 +20,7 @@ function renderLicenseLink(license) {
   return links[license] || ''; // Return empty string if license not found
 }
 
-// TODO: Create a function that returns the license section of README
+// function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (!license) return '';
@@ -28,33 +28,57 @@ function renderLicenseSection(license) {
   let licenseSection = `## License\n`;
   licenseSection += `${renderLicenseBadge(license)}\n`;
   licenseSection += `This project is licensed under the ${license} license. `;
-  licenseSection += `You can view the license [here](${renderLicenseLink(license)}).`;
+  licenseSection += `You can view the license [here](${renderLicenseLink(license)}).\n`;
   return licenseSection;
 }
 
 // TODO: Create a function to generate markdown for README
+const generateTableOfContents = (data) => {
+  const sections = ["Description", "Installation", "Usage", "Contributing", "Tests", "Questions"];
+  let tableOfContents = "## Table of Contents\n";
+
+  sections.forEach((section) => {
+    if (data[section.toLowerCase()]) { // Check if section has content
+      tableOfContents += `* [${section}](#${section.toLowerCase()})\n`;
+    }
+  });
+
+  return tableOfContents;
+};
+
 function generateMarkdown(data) {
-  return `# ${data.title}
+  let markdown = `# ${data.title}\n`;
+  // Add the license section near the top
+  const licenseSection = renderLicenseSection(data.license);
+  if (licenseSection) {
+    markdown += licenseSection;
+  }
 
-${renderLicenseSection(data.license)}
+  markdown += generateTableOfContents(data); // Add Table of Contents
 
-## Description
-${data.description}
+  markdown += `## Description\n${data.description}\n`;
 
-## Installation
-${data.installation}
+  markdown += `## Installation Instructions\n${data.installation}\n`;
 
-## Usage
-${data.usage}
+  markdown += `## Usage Information\n${data.usage}\n`;
+  // Add the link to the demo video
+  markdown += `Here's a quick demo of the application in action: [ReadMe Generator Demo](https://github.com/egarza0614/assets/ReadMeGen_Demo.webm)\n`;
 
-## Contributing
-${data.contributing}
+  markdown += `## Contributing\n${data.contributing}\n`;
 
-## Tests
-${data.tests}
+  markdown += `## Tests\n${data.tests}\n`;
 
-## Questions
-`;
+  markdown += `## Questions\n`;
+
+  if (data.github) {
+    markdown += `* GitHub: [${data.github}](https://github.com/${data.github})\n`;
+  }
+
+  if (data.email) {
+    markdown += `* Email: ${data.email} (Feel free to contact me with additional questions.)\n`;
+  }
+
+  return markdown;
 }
 
 module.exports = generateMarkdown;
