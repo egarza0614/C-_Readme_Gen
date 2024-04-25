@@ -15,7 +15,7 @@ A simple command-line application to generate READMEs.
 Step1: Clone the repository. Step2: Install the dependencies with commmand npm install
 ## Usage
 Type node index.js in the command prompt and follow the prompts.
-Here's a quick demo of the application in action: [ReadMe Generator Demo](https://github.com/egarza0614/C9_Readme_Gen/assets/ReadMeGen_Demo.webm)
+Here's a quick demo of the application in action: [ReadMe Generator Demo](https://egarza0614.github.io/C9_Readme_Gen/assets/ReadMeGen_Demo.webm)
 ## Contribution
 undefined
 ## Tests
