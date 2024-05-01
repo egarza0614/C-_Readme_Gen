@@ -16,8 +16,13 @@ Step1: Clone the repository. Step2: Install the dependencies with commmand npm i
 ## Usage
 Type node index.js in the command prompt and follow the prompts.
 Here's a quick demo of the application in action: [ReadMe Generator Demo](https://egarza0614.github.io/C9_Readme_Gen/assets/ReadMeGen_Demo.webm)
+<<<<<<< HEAD
 ## Contributing
 Please contribute by reporting any fails.
+=======
+## Contribution
+undefined
+>>>>>>> be314cff4c7447c94e29789ce7e163101d4a93b4
 ## Tests
 Type node index.js
 ## Questions
