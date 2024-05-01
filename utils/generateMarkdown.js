@@ -34,7 +34,7 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 const generateTableOfContents = (data) => {
-  const sections = ["Description", "Installation", "Usage", "Contribution", "Tests", "Questions"];
+  const sections = ["Description", "Installation", "Usage", "Contributing", "Tests", "Questions"];
   let tableOfContents = "## Table of Contents\n";
 
   sections.forEach((section) => {
@@ -62,7 +62,7 @@ function generateMarkdown(data) {
   // Add the link to the demo video
   markdown += `Here's a quick demo of the application in action: [ReadMe Generator Demo](https://egarza0614.github.io/C9_Readme_Gen/assets/ReadMeGen_Demo.webm)\n`;
 
-  markdown += `## Contribution\n${data.contributing}\n`;
+  markdown += `## Contributing\n${data.contributing}\n`;
 
   markdown += `## Tests\n${data.tests}\n`;
 
